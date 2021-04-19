@@ -5,10 +5,10 @@ export class bug{
   module: String;
   buildVersion : String;
   synopsis:String;
-  product: String;
+  product : String;
   description: String;
   submittedOn: Date = new Date();
-  eta: Date;
+  eta : Date;
   status : String;
   priority : String;
   severity : String;

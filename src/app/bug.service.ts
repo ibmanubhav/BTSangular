@@ -15,11 +15,20 @@ export class BugService {
       headers: {
         "content-type": 'application/json'
       },
-      responseType:"text"
+      responseType: "text"
     });
   }
 
-  getAllBugs(){
+  getAllBugs() {
     return this.http.get(URL);
+  }
+
+  getBug(name: any) {
+    return this.http.get(URL + 'name/' + name, {
+      headers: {
+        "content-type": 'application/json',
+        responseType: 'text'
+      }
+    });
   }
 }

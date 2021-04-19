@@ -46,6 +46,8 @@
 
   <!-- Button -->
   <div><button (click)='save()'>Save</button></div><br>
+  <div><button (click)='getBug(Bug.name)'>Search Bug</button></div><br>
+  <div><input [(ngModel)]='Bug.name'></div>
 
   <!-- Table -->
   <table>
@@ -71,14 +73,14 @@
         <td>{{Bug1.module}}</td>
         <td>{{Bug1.buildVersion}}</td>
         <td>{{Bug1.synopsis}}</td>
-        <td>{{Bug1.product}</td>
+        <td>{{Bug1.product}}</td>
         <td>{{Bug1.description}}</td>
         <td>{{Bug1.submittedOn}}</td>
         <td>{{Bug1.eta}}</td>
         <td>{{Bug1.status}}</td>
         <td>{{Bug1.priority}}</td>
         <td>{{Bug1.severity}}</td>
-        <td>{{Bug1.type}</td>
+        <td>{{Bug1.type}}</td>
     </tbody>
   </table>
 
