@@ -1,0 +1,47 @@
+.inputs {
+  align-content: center;
+  font-family: verdana;
+  font-size: 100%;
+}
+
+h1 {
+  background-color: blueviolet;
+  padding: 30px;
+  text-align: center;
+  color: aliceblue;
+}
+
+h3 {
+  text-align: center;
+  background-color: burlywood;
+  padding: 20px;
+}
+
+.bugForm{
+  text-align: center;
+}
+
+button {
+  align-self: center;
+  text-align: center;
+  background-color: green;
+  color: whitesmoke;
+  border: 2px solid #4caf50;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 250px;
+}
+
+.button1:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+thead{
+  background-color: darkmagenta;
+}
+table{
+  background-color: cyan;
+  border-collapse:collapse;
+  width:100%;
+  border: 1px solid black;
+}

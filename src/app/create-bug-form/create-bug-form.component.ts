@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { bug } from "../bug";
-import { BugService} from "../bug.service";
+import { BugService } from "../bug.service";
 
 @Component({
   selector: 'app-create-bug-form',
@@ -8,29 +8,50 @@ import { BugService} from "../bug.service";
   styleUrls: ['./create-bug-form.component.css']
 })
 export class CreateBugFormComponent implements OnInit {
-title:string = 'Create Bug Form';
-Bug:bug = new bug();
-bugArray:bug[]=[];
+  title: string = 'Create Bug Form';
+  Bug: bug = new bug();
+  //bugArray: bug[] = [];
+  bugArray : any;
 
-  constructor(private BugService:BugService) { }
+  constructor(private BugService: BugService) { }
 
-  save(){
+  save() {
     this.bugArray.push(Object.assign({}, this.Bug));
     console.log(this.Bug.name);
+    console.log(this.Bug.projectId);
+    console.log(this.Bug.module);
+    console.log(this.Bug.buildVersion);
+    console.log(this.Bug.synopsis);
+    console.log(this.Bug.product);
+    console.log(this.Bug.description);
+    console.log(this.Bug.submittedOn);
+    console.log(this.Bug.eta);
+    console.log(this.Bug.status);
+    console.log(this.Bug.priority);
+    console.log(this.Bug.severity);
+    console.log(this.Bug.type);
 
-    const promise = this.BugService.save(this.Bug);
-    promise.subscribe(response=>{
+
+    const observable = this.BugService.save(this.Bug);
+    observable.subscribe(response => {
       console.log(response);
+      this.Bug.id = response;
       alert("Bug is Added");
-      this.bugArray.push(Object.assign({},this.Bug));
+      this.bugArray.push(Object.assign({}, this.Bug));
     },
-    error=>{
-      console.log(error);
-      alert("Error Occured")
-    })
+      error => {
+        console.log(error);
+        alert("Error Occured")
+      })
 
   }
   ngOnInit(): void {
+    const observable = this.BugService.getAllBugs();
+    observable.subscribe(response => {
+      console.log(response);
+      this.bugArray = response;
+
+    });
   }
 
 }

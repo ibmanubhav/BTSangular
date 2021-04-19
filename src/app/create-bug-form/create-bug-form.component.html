@@ -1,4 +1,85 @@
 <p>create-bug-form works!</p>
+<h1>Bug Tracking System</h1>
 
-<input [(ngModel)] ='Bug.name'>
-<button (click)='save()'>Save</button>
+<h3>Create Bug</h3>
+<div class="bugForm">
+  <!-- Form -->
+  <div>Bug Name : <input placeholder='Enter Bug Name' [(ngModel)]='Bug.name'></div><br>
+  <div>Project ID : <input placeholder='Enter Project ID' [(ngModel)]='Bug.projectId'></div><br>
+  <div>Module: <input placeholder="Enter Module" [(ngModel)]='Bug.module'></div><br>
+  <div>Build Version : <input placeholder='Enter Build Version' [(ngModel)]='Bug.buildVersion'></div><br>
+  <div>Synopsis : <input placeholder='Enter Synopsis' [(ngModel)]='Bug.synopsis'></div><br>
+  <div>Product : <input placeholder='Enter Product' [(ngModel)]='Bug.product'></div><br>
+  <div>Description : <textarea placeholder='Enter Description about Bug' [(ngModel)]='Bug.description' rows="7"
+      cols="22"> </textarea></div><br>
+  <div>Submitted On : <input type="date" [(ngModel)]='Bug.submittedOn'></div><br>
+  <div>ETA : <input type="date" [(ngModel)]='Bug.eta'></div><br>
+  <div>Bug Status :
+    <select [(ngModel)]='Bug.status'>
+      <option>NEW</option>
+    </select>
+  </div><br>
+  <div>Bug Priority :
+    <select [(ngModel)]='Bug.priority'>
+      <option>HIGH</option>
+      <option>MEDIUM</option>
+      <option>LOW</option>
+    </select>
+  </div><br>
+  <div>Bug Severity :
+    <select [(ngModel)]='Bug.severity'>
+      <option>CRITICAL</option>
+      <option>MAJOR</option>
+      <option>MINOR</option>
+    </select>
+  </div><br>
+  <div>Bug Type :
+    <select [(ngModel)]='Bug.type'>
+      <option>SYNTAX</option>
+      <option>COMPILE_TIME</option>
+      <option>RUNTIME</option>
+      <option>LOGICAL</option>
+      <option>FUNCTIONAL</option>
+      <option>CALCULATION</option>
+    </select>
+  </div><br>
+
+  <!-- Button -->
+  <div><button (click)='save()'>Save</button></div><br>
+
+  <!-- Table -->
+  <table>
+    <thead>
+      <td>Bug Name</td>
+      <td>Project ID</td>
+      <td>Module</td>
+      <td>Build Version</td>
+      <td>Synopsis</td>
+      <td>Product</td>
+      <td>Description</td>
+      <td>Submitted On</td>
+      <td>ETA</td>
+      <td>Bug Status</td>
+      <td>Bug Priority</td>
+      <td>Bug Severity</td>
+      <td>Bug Type</td>
+    </thead>
+    <tbody>
+      <tr *ngFor='let Bug1 of bugArray; index as i'>
+        <td>{{Bug1.name}}</td>
+        <td>{{Bug1.projectId}}</td>
+        <td>{{Bug1.module}}</td>
+        <td>{{Bug1.buildVersion}}</td>
+        <td>{{Bug1.synopsis}}</td>
+        <td>{{Bug1.product}</td>
+        <td>{{Bug1.description}}</td>
+        <td>{{Bug1.submittedOn}}</td>
+        <td>{{Bug1.eta}}</td>
+        <td>{{Bug1.status}}</td>
+        <td>{{Bug1.priority}}</td>
+        <td>{{Bug1.severity}}</td>
+        <td>{{Bug1.type}</td>
+    </tbody>
+  </table>
+
+</div>
