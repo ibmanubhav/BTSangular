@@ -7,8 +7,11 @@ import { HeaderComponent } from './header/header.component';
 import { CreateBugFormComponent } from './create-bug-form/create-bug-form.component';
 import { SearchBugsComponent } from './search-bugs/search-bugs.component';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+
 const appRoutes: Routes = [
-  { path: '', component: CreateBugFormComponent },
+  { path: '', component: HomeComponent},
+  { path: 'create', component: CreateBugFormComponent },
   { path: 'search', component: SearchBugsComponent },
 ];
 
@@ -17,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     CreateBugFormComponent,
-    SearchBugsComponent
+    SearchBugsComponent,
+    HomeComponent
   ],
   imports: [RouterModule.forRoot(
     appRoutes,

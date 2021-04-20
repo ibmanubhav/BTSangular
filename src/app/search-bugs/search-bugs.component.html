@@ -34,55 +34,72 @@
 
 <div class="jumbotron text-center" style="margin-bottom: 0">
   <h1>BUG TRACKING SYSTEM</h1>
-  <!-- <p>Resize this responsive page to see the effect!</p>  -->
 </div>
 
-<body class="=searchBugs">
-  <div>
-    <div>Bug Name : <input [(ngModel)]='Bug.name'></div>
-    <div><button (click)='getBugName(Bug.name)'>Search Bug</button></div><br>
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div class="searchBug">
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group form-inline">
+          <label>Bug Name : </label>
+          <input [(ngModel)]="Bug.name" />
+          <div class="col">
+            <button class="btn btn-info" (click)="getBugName(Bug.name)">Search Name</button><br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="row">
+      <div class="col">
+        <div class="form-group form-inline">
+          <label>Bug Status : </label>
+          <input [(ngModel)]="Bug.status" />
+          <div class="col">
+            <button class="btn btn-info" (click)="getBugStatus(Bug.status)">Search Status</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <td>Bug Name</td>
+        <td>Project ID</td>
+        <td>Module</td>
+        <td>Build Version</td>
+        <td>Synopsis</td>
+        <td>Product</td>
+        <td>Description</td>
+        <td>Submitted On</td>
+        <td>ETA</td>
+        <td>Bug Status</td>
+        <td>Bug Priority</td>
+        <td>Bug Severity</td>
+        <td>Bug Type</td>
+      </thead>
+      <tbody>
+        <tr *ngFor='let Bug1 of bugArray; index as i'>
+          <td>{{Bug1.name}}</td>
+          <td>{{Bug1.projectId}}</td>
+          <td>{{Bug1.module}}</td>
+          <td>{{Bug1.buildVersion}}</td>
+          <td>{{Bug1.synopsis}}</td>
+          <td>{{Bug1.product}}</td>
+          <td>{{Bug1.description}}</td>
+          <td>{{Bug1.submittedOn}}</td>
+          <td>{{Bug1.eta}}</td>
+          <td>{{Bug1.status}}</td>
+          <td>{{Bug1.priority}}</td>
+          <td>{{Bug1.severity}}</td>
+          <td>{{Bug1.type}}</td>
+      </tbody>
+    </table>
   </div>
-
-  <div>
-<div>Bug Status : <input [(ngModel)]='Bug.status'></div>
-<div><button (click)='getBugStatus(Bug.status)'>Search Bug</button></div><br>
-  </div>
-
-
-
-  <table>
-    <thead>
-      <td>Bug Name</td>
-      <td>Project ID</td>
-      <td>Module</td>
-      <td>Build Version</td>
-      <td>Synopsis</td>
-      <td>Product</td>
-      <td>Description</td>
-      <td>Submitted On</td>
-      <td>ETA</td>
-      <td>Bug Status</td>
-      <td>Bug Priority</td>
-      <td>Bug Severity</td>
-      <td>Bug Type</td>
-    </thead>
-    <tbody>
-      <tr *ngFor='let Bug1 of bugArray; index as i'>
-        <td>{{Bug1.name}}</td>
-        <td>{{Bug1.projectId}}</td>
-        <td>{{Bug1.module}}</td>
-        <td>{{Bug1.buildVersion}}</td>
-        <td>{{Bug1.synopsis}}</td>
-        <td>{{Bug1.product}}</td>
-        <td>{{Bug1.description}}</td>
-        <td>{{Bug1.submittedOn}}</td>
-        <td>{{Bug1.eta}}</td>
-        <td>{{Bug1.status}}</td>
-        <td>{{Bug1.priority}}</td>
-        <td>{{Bug1.severity}}</td>
-        <td>{{Bug1.type}}</td>
-    </tbody>
-  </table>
 
 </body>
 

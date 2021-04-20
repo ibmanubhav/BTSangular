@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { bug } from "../bug";
 import { BugService } from "../bug.service";
 import { observable } from 'rxjs';
+import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-search-bugs',
@@ -30,19 +31,18 @@ export class SearchBugsComponent implements OnInit {
 
   }
 
+
   getBugStatus(status: any) {
-    console.log(this.Bug.status);
-    const observable = this.BugService.getBugStatus(this.Bug.status);
+    const observable = this.BugService.getBugStatus(status);
     observable.subscribe(response => {
       console.log(response);
-      this.bugArray = [response];
-      console.log("Success");
+      this.bugArray = response
     },
       error => {
         console.log(error);
-        alert('Error Occured');
-      })
-
+        alert("Error");
+      }
+    );
   }
 
 
