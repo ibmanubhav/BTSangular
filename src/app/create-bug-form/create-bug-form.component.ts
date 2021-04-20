@@ -53,18 +53,18 @@ export class CreateBugFormComponent implements OnInit {
 
     });
   }
-  getBug(name:any)
-  {
-    this.BugService.getBug(name).subscribe(response=>{
-      this.bugArray=[response];
-      console.log(response);
-      alert('Bug Displayed');
-    },
-    error=>{
-      console.log(error);
-      alert('Error Occured');
-    })
+  // getBugName(name:any)
+  // {
+  //   this.BugService.getBugName(name).subscribe(response=>{
+  //     this.bugArray=[response];
+  //     console.log(response);
+  //     alert('Bug Displayed');
+  //   },
+  //   error=>{
+  //     console.log(error);
+  //     alert('Error Occured');
+  //   })
 
-  }
+  //}
 
 }
