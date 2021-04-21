@@ -168,41 +168,6 @@ style="padding-bottom: 30px"
     <!-- Button -->
     <div><button type="submit" class="btn btn-success" (click)='save()'>Save</button></div><br>
 
-    <!-- Table -->
-    <table>
-      <thead>
-        <td>Bug Name</td>
-        <td>Project ID</td>
-        <td>Module</td>
-        <td>Build Version</td>
-        <td>Synopsis</td>
-        <td>Product</td>
-        <td>Description</td>
-        <td>Submitted On</td>
-        <td>ETA</td>
-        <td>Bug Status</td>
-        <td>Bug Priority</td>
-        <td>Bug Severity</td>
-        <td>Bug Type</td>
-      </thead>
-      <tbody>
-        <tr *ngFor='let Bug1 of bugArray; index as i'>
-          <td>{{Bug1.name}}</td>
-          <td>{{Bug1.projectId}}</td>
-          <td>{{Bug1.module}}</td>
-          <td>{{Bug1.buildVersion}}</td>
-          <td>{{Bug1.synopsis}}</td>
-          <td>{{Bug1.product}}</td>
-          <td>{{Bug1.description}}</td>
-          <td>{{Bug1.submittedOn}}</td>
-          <td>{{Bug1.eta}}</td>
-          <td>{{Bug1.status}}</td>
-          <td>{{Bug1.priority}}</td>
-          <td>{{Bug1.severity}}</td>
-          <td>{{Bug1.type}}</td>
-      </tbody>
-    </table>
-
   </div>
 
 </body>

@@ -49,7 +49,7 @@
       </div>
     </div>
 
-    <table>
+    <table class="table-responsive">
       <thead>
         <td>Bug Name</td>
         <td>Project ID</td>
@@ -74,8 +74,8 @@
           <td>{{Bug1.synopsis}}</td>
           <td>{{Bug1.product}}</td>
           <td>{{Bug1.description}}</td>
-          <td>{{Bug1.submittedOn}}</td>
-          <td>{{Bug1.eta}}</td>
+          <td>{{Bug1.submittedOn | date: 'M/d/yy'}}</td>
+          <td>{{Bug1.eta | date: 'M/d/yy'}}</td>
           <td>{{Bug1.status}}</td>
           <td>{{Bug1.priority}}</td>
           <td>{{Bug1.severity}}</td>

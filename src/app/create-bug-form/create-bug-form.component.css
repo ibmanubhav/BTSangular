@@ -15,12 +15,6 @@ input, label {
   float:left;
 }
 
-h1 {
-  background-color: blueviolet;
-  padding: 30px;
-  text-align: center;
-  color: aliceblue;
-}
 
 h3 {
   text-align: center;
@@ -28,12 +22,11 @@ h3 {
   padding: 20px;
 }
 
-.bugForm{
+.searchBug{
   text-align: center;
 }
 
 button {
-  border: 2px solid #4caf50;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 250px;
 }
@@ -44,7 +37,7 @@ button {
 }
 
 thead{
-  background-color: darkmagenta;
+  background-color: rgb(166, 191, 197);
 }
 .button1 {
   background-color: white;
@@ -72,11 +65,11 @@ th,td{
 }
 
 tr:nth-child(odd){
-  background-color: grey;
+  background-color: rgb(192, 199, 169);
 }
 
 tr,tr td:hover{
-  background-color:red;
+  background-color:rgb(236, 240, 231);
 }
 
 body {

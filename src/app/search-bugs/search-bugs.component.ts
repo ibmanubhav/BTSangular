@@ -47,6 +47,11 @@ export class SearchBugsComponent implements OnInit {
 
 
   ngOnInit(): void {
-  }
+    const observable = this.BugService.getAllBugs();
+    observable.subscribe(response => {
+      console.log(response);
+      this.bugArray = response;
 
+    });
+  }
 }

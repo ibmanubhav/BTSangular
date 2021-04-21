@@ -14,20 +14,6 @@ export class UpdatebugComponent implements OnInit {
   bugArray: any;
 
   constructor(private BugService: BugService) { }
-  getBugName(name: any) {
-    console.log(this.Bug.name);
-    const observable = this.BugService.getBugName(this.Bug.name);
-    observable.subscribe(response => {
-      console.log(response);
-      this.bugArray = [response];
-      console.log("Success");
-    },
-      error => {
-        console.log(error);
-        alert('Error Occured');
-      })
-
-  }
 
 
   update() {
