@@ -8,11 +8,13 @@ import { CreateBugFormComponent } from './create-bug-form/create-bug-form.compon
 import { SearchBugsComponent } from './search-bugs/search-bugs.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { UpdatebugComponent } from './updatebug/updatebug.component';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'create', component: CreateBugFormComponent },
   { path: 'search', component: SearchBugsComponent },
+  { path: 'update', component: UpdatebugComponent },
 ];
 
 @NgModule({
@@ -21,7 +23,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     CreateBugFormComponent,
     SearchBugsComponent,
-    HomeComponent
+    HomeComponent,
+    UpdatebugComponent
   ],
   imports: [RouterModule.forRoot(
     appRoutes,
