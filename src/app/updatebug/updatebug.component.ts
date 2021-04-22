@@ -14,7 +14,8 @@ export class UpdatebugComponent implements OnInit {
   bugArray: any;
 
   constructor(private BugService: BugService) { }
-
+//=============================================================================================
+//=============================================================================================
 
   update() {
     const promise = this.BugService.updateBug(this.Bug, this.Bug.id);

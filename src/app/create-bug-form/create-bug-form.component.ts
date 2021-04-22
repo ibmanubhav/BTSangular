@@ -16,20 +16,20 @@ export class CreateBugFormComponent implements OnInit {
   constructor(private BugService: BugService) { }
 
   save() {
-    this.bugArray.push(Object.assign({}, this.Bug));
-    console.log(this.Bug.name);
-    console.log(this.Bug.projectId);
-    console.log(this.Bug.module);
-    console.log(this.Bug.buildVersion);
-    console.log(this.Bug.synopsis);
-    console.log(this.Bug.product);
-    console.log(this.Bug.description);
-    console.log(this.Bug.submittedOn);
-    console.log(this.Bug.eta);
-    console.log(this.Bug.status);
-    console.log(this.Bug.priority);
-    console.log(this.Bug.severity);
-    console.log(this.Bug.type);
+    // this.bugArray.push(Object.assign({}, this.Bug));
+    // console.log(this.Bug.name);
+    // console.log(this.Bug.projectId);
+    // console.log(this.Bug.module);
+    // console.log(this.Bug.buildVersion);
+    // console.log(this.Bug.synopsis);
+    // console.log(this.Bug.product);
+    // console.log(this.Bug.description);
+    // console.log(this.Bug.submittedOn);
+    // console.log(this.Bug.eta);
+    // console.log(this.Bug.status);
+    // console.log(this.Bug.priority);
+    // console.log(this.Bug.severity);
+    // console.log(this.Bug.type);
 
 
     const observable = this.BugService.save(this.Bug);

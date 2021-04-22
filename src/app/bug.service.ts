@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { bug } from './bug'
+import{ HttpHeaders } from '@angular/common/http'
 
 const URL = 'http://localhost:8081/bug';
 
@@ -44,4 +45,9 @@ export class BugService {
       headers:{"content-type": 'application/json'}
     })
   }
+  delete(id: any){
+    return this.http.delete(URL + '/' +id);
+  }
 }
+
+

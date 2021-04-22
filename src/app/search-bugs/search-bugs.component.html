@@ -4,84 +4,99 @@
   </div>
 
   <div id="searchBug" class="container tab-pane active" style="padding-bottom: 30px">
+    <div class="centre">
 
-    <div class="row">
-      <div class="col">
-        <div class="form-group form-inline">
-          <label>Bug Name : </label>
-          <input style="width: 250px" [(ngModel)]="Bug.name" />
-          <div class="col">
-            <button class="btn btn-info" (click)="getBugName(Bug.name)">Search Name</button><br>
+      <div class="row">
+        <div class="col">
+          <div class="form-group form-inline">
+            <label>Bug Name : </label>
+            <input style="width: 250px" [(ngModel)]="Bug.name" />
+            <div class="col">
+              <button class="btn btn-info align-right" (click)="getBugName(Bug.name)">Search Name</button><br>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="row">
+        <div class="col">
+          <div class="form-group form-inline">
+            <label>Bug Status : </label>
+            <select style="width: 250px" class="custom-select custom-select mb-3" id="status" [(ngModel)]="Bug.status"
+              required>
+              <option>NEW</option>
+              <option>ASSIGNED</option>
+              <option>OPEN</option>
+              <option>FIXED</option>
+              <option>PENDING_RETEST</option>
+              <option>RETEST</option>
+              <option>REOPEN</option>
+              <option>VERIFIED</option>
+              <option>CLOSED</option>
+              <option>DEFERRED</option>
+              <option>DUPLICATE</option>
+              <option>NOT_A_BUG</option>
+              <option>REJECTED</option>
+              <option>COULD_NOT_REPRODUCE</option>
+              <option>WONT_FIX</option>
+            </select>
+            <div class="col">
+              <button class="btn btn-info" (click)="getBugStatus(Bug.status)">Search Status</button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-
-
-
-    <div class="row">
-      <div class="col">
-        <div class="form-group form-inline">
-          <label>Bug Status : </label>
-          <select style="width: 250px" class="custom-select custom-select mb-3" id="status" [(ngModel)]="Bug.status"
-            required>
-            <option>NEW</option>
-            <option>ASSIGNED</option>
-            <option>OPEN</option>
-            <option>FIXED</option>
-            <option>PENDING_RETEST</option>
-            <option>RETEST</option>
-            <option>REOPEN</option>
-            <option>VERIFIED</option>
-            <option>CLOSED</option>
-            <option>DEFERRED</option>
-            <option>DUPLICATE</option>
-            <option>NOT_A_BUG</option>
-            <option>REJECTED</option>
-            <option>COULD_NOT_REPRODUCE</option>
-            <option>WONT_FIX</option>
-          </select>
-          <div class="col">
-            <button class="btn btn-info" (click)="getBugStatus(Bug.status)">Search Status</button>
-          </div>
-        </div>
-      </div>
+    <div class="centre">
+      <button class="btn btn-info" (click)="ngOnInit()">Get All Bugs</button>
     </div>
+    <!-- <button class="submitButton" (click)="this.bugs1(Bug.name, Bug.status)">
+      SEARCH BUG
+    </button> -->
+    <div class="table-responsive">
+      <table class="table table-bordered table-stripped" style="border: 2px solid #000000; margin-top: 50px">
+        <thead class="thead-dark">
+          <td>Bug Name</td>
+          <td>Project ID</td>
+          <!-- <td>Module</td> -->
+          <td>Build Version</td>
+          <!-- <td>Synopsis</td> -->
+          <td>Product</td>
+          <td>Description</td>
+          <td>Submitted On</td>
+          <td>ETA</td>
+          <td>Bug Status</td>
+          <td>Bug Priority</td>
+          <td>Bug Severity</td>
+          <td>Bug Type</td>
+          <td>Delete Bug</td>
+        </thead>
+        <tbody>
+          <tr *ngFor='let Bug1 of bugArray; index as i'>
+            <td>{{Bug1.name}}</td>
+            <td>{{Bug1.projectId}}</td>
 
-    <table class="table-responsive">
-      <thead>
-        <td>Bug Name</td>
-        <td>Project ID</td>
-        <td>Module</td>
-        <td>Build Version</td>
-        <td>Synopsis</td>
-        <td>Product</td>
-        <td>Description</td>
-        <td>Submitted On</td>
-        <td>ETA</td>
-        <td>Bug Status</td>
-        <td>Bug Priority</td>
-        <td>Bug Severity</td>
-        <td>Bug Type</td>
-      </thead>
-      <tbody>
-        <tr *ngFor='let Bug1 of bugArray; index as i'>
-          <td>{{Bug1.name}}</td>
-          <td>{{Bug1.projectId}}</td>
-          <td>{{Bug1.module}}</td>
-          <td>{{Bug1.buildVersion}}</td>
-          <td>{{Bug1.synopsis}}</td>
-          <td>{{Bug1.product}}</td>
-          <td>{{Bug1.description}}</td>
-          <td>{{Bug1.submittedOn | date: 'M/d/yy'}}</td>
-          <td>{{Bug1.eta | date: 'M/d/yy'}}</td>
-          <td>{{Bug1.status}}</td>
-          <td>{{Bug1.priority}}</td>
-          <td>{{Bug1.severity}}</td>
-          <td>{{Bug1.type}}</td>
-      </tbody>
-    </table>
+            <td>{{Bug1.buildVersion}}</td>
+
+            <td>{{Bug1.product}}</td>
+            <td>{{Bug1.description}}</td>
+            <td>{{Bug1.submittedOn | date: 'M/d/yy'}}</td>
+            <td>{{Bug1.eta | date: 'M/d/yy'}}</td>
+            <td>{{Bug1.status}}</td>
+            <td>{{Bug1.priority}}</td>
+            <td>{{Bug1.severity}}</td>
+            <td>{{Bug1.type}}</td>
+            <td> <button class="button11" (click)='this.deleteBug(Bug1.id,i)'>Delete</button></td>
+        </tbody>
+      </table>
+    </div>
+    <footer class="page-footer font-small blue" id="footer">
+      <div class="footer-copyright text-center py-3">
+        <small>© 2021 Copyright Code_with_HAT</small>
+      </div>
+    </footer>
   </div>
-
 </body>

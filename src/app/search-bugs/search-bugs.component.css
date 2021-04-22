@@ -16,14 +16,16 @@ input, label {
 }
 
 
-h3 {
+.centre{
   text-align: center;
-  background-color: burlywood;
-  padding: 20px;
 }
 
 .searchBug{
   text-align: center;
+}
+
+.button11{
+  width: 60px;
 }
 
 button {
@@ -44,7 +46,6 @@ thead{
   color: black;
   border: 2px solid #4CAF50;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-  width: 250px;
 }
 
 .button1:hover {
@@ -60,7 +61,7 @@ table{
 
 th,td{
   border: 1px soild black;
-  text-align: left;
+  text-align: center;
   padding: 8px;
 }
 

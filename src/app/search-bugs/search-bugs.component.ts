@@ -15,20 +15,38 @@ export class SearchBugsComponent implements OnInit {
   bugArray: any;
 
   constructor(private BugService: BugService) { }
+  // ==================================================
 
+  // bugs1(name:String, status:any){
+  //   if (name != null){
+  //     this.getBugName(name);
+  //   }
+  //   else if (status != null){
+  //     this.getBugStatus(status);
+  //   }
+  //   else{
+  //     this.BugService.getAllBugs();
+  //   }
+  // }
+
+  // reloadPage() {
+  //   window.location.reload();
+  // }
+
+  // ==================================================
   getBugName(name: any) {
     console.log(this.Bug.name);
     const observable = this.BugService.getBugName(this.Bug.name);
     observable.subscribe(response => {
       console.log(response);
       this.bugArray = [response];
-      console.log("Success");
-    },
-      error => {
-        console.log(error);
-        alert('Error Occured');
-      })
-
+      if (this.bugArray[0] == undefined) {
+        return alert('Oops!! No Bug in Database')
+      }
+      else {
+        return alert('Bug Found')
+      }
+    })
   }
 
 
@@ -37,12 +55,25 @@ export class SearchBugsComponent implements OnInit {
     observable.subscribe(response => {
       console.log(response);
       this.bugArray = response
-    },
-      error => {
-        console.log(error);
-        alert("Error");
+      if (this.bugArray[0] == undefined) {
+        return alert('Oops!! No Bug in Database')
       }
-    );
+      else {
+        return alert('Bug Found')
+      }
+    })
+  }
+
+  deleteBug(id: any, index: number) {
+    if (confirm("Are you Sure??")) {
+      const observable = this.BugService.delete(id);
+      observable.subscribe(response => this.bugArray.splice(index, 1))
+      alert("Bug Deleted");
+    }
+    else {
+      alert("Ok Cancelled !!!")
+    }
+
   }
 
 
