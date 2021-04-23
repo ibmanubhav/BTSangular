@@ -17,74 +17,74 @@ export class UpdatebugComponent implements OnInit {
 
   constructor(private BugService: BugService) { }
   //=============================================================================================
-//   searchBugbyName(name: any) {
-//     let URL = 'http://localhost:8081/bug/';
-//     let bugname = (<HTMLInputElement>document.getElementById('name')).value;
-//     if (bugname) {
-//       URL = URL + 'name/' + bugname;
-//       const observable = this.BugService.getBugName(bugname);
-//       observable.subscribe(response => {
-//         this.bugArray = response;
-//         console.log("success");
-//         if (this.bugArray) {
-//           this.Bug = this.bugArray;
-//         }
-//         else {
-//           alert("Enter a valid bug name");
-//         }
-//       },
-//         error => {
-//           console.log(error);
-//           alert("error");
-//         })
-//     }
-//     else {
-//       alert("Please enter bug name")
-//     }
-//   }
+  getBugName1(name: any) {
+    let URL = 'http://localhost:8081/bug/';
+    let bugname = (<HTMLInputElement>document.getElementById('bugname')).value;
+    if (bugname) {
+      URL = URL + 'name/' + bugname;
+      const observable = this.BugService.getBugName(bugname);
+      observable.subscribe(response => {
+        this.bugArray = response;
+        console.log("success");
+        if (this.bugArray) {
+          this.Bug = this.bugArray;
+        }
+        else {
+          alert("Enter a valid bug name");
+        }
+      },
+        error => {
+          console.log(error);
+          alert("error");
+        })
+    }
+    else {
+      alert("Please enter bug name")
+    }
+  }
 
-//   //updating bug details
-//   update() {
-//     if (this.Bug.name) {
-//       this.Bug.name = (<HTMLInputElement>document.getElementById('name')).value;
-
-//       console.log(this.Bug);
-//       const promise = this.BugService.updateBug(this.Bug, this.Bug.id);
-//       promise.subscribe((response: any) => {
-//         console.log(response);
-//         alert('Bug is Updated')
-//       },
-//         error => {
-//           console.log(error);
-//           alert('Error Occured')
-//         })
-//     }
-//     else {
-//       alert("Enter a valid bug name..")
-//     }
-//   }
-
-// ngOnInit(): void {
-// }
-
-// }
-//=============================================================================================
-
+  //updating bug details
   update() {
-    const promise = this.BugService.updateBug(this.Bug, this.Bug.id);
-    promise.subscribe((response: any) => {
-      console.log(response);
-      alert('Bug is Updated')
+    if (this.Bug.name) {
+      this.Bug.name = (<HTMLInputElement>document.getElementById('bugname')).value;
 
-    },
-      error => {
-        console.log(error);
-        alert('Error Occured')
-
-      })
+      console.log(this.Bug);
+      const promise = this.BugService.updateBug(this.Bug, this.Bug.id);
+      promise.subscribe((response: any) => {
+        console.log(response);
+        alert('Bug is Updated')
+      },
+        error => {
+          console.log(error);
+          alert('Error Occured')
+        })
+    }
+    else {
+      alert("Enter a valid bug name..")
+    }
   }
 
   ngOnInit(): void {
   }
 
 }
+//=============================================================================================
+
+//   update() {
+//     const promise = this.BugService.updateBug(this.Bug, this.Bug.id);
+//     promise.subscribe((response: any) => {
+//       console.log(response);
+//       alert('Bug is Updated')
+
+//     },
+//       error => {
+//         console.log(error);
+//         alert('Error Occured')
+
+//       })
+//   }
+
+//   ngOnInit(): void {
+//   }
+
+// }

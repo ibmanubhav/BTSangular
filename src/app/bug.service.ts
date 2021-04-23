@@ -40,11 +40,13 @@ export class BugService {
       }
     });
   }
+
   updateBug(bug : bug, id :string){
     return this.http.put(URL+'/'+id, bug,{
       headers:{"content-type": 'application/json'}
     })
   }
+
   delete(id: any){
     return this.http.delete(URL + '/' +id);
   }

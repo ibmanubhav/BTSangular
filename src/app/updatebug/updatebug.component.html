@@ -10,7 +10,7 @@
 
 
       <!-- Form -->
-      <div class="row">
+      <!-- <div class="row">
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
@@ -22,14 +22,14 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <div class="row">
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
                <label for="uname" class="mb-2 mr-sm-2"><b>BugName :</b><span style="color: red"> * </span></label> <br>
-              <input  value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname" placeholder="Enter Name of Bug" name="bugname" [(ngModel)]='Bug.name' required>
+              <input  value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname" placeholder="Enter Name of Bug" name="name" (focusout)="getBugName1(Bug.name)" [(ngModel)]='Bug.name' required>
             </div>
           </div>
         </div>
