@@ -59,6 +59,14 @@ export class BugService {
       }
       });
   }
+  getBugsStatusandName(status:string,name:string ){
+    return this.http.get(URL+'/search/'+ name+'/'+status, {
+      headers: {
+        "content-type": 'application/json',
+        reponseType: 'text'
+      }
+      });
+  }
 }
 
 

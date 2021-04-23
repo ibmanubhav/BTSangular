@@ -46,11 +46,13 @@
       </div>
     </div>
     <div class="centre">
-      <button class="btn btn-info" (click)="ngOnInit()">Get All Bugs</button>
+      <button class="btn btn-info left" (click)="ngOnInit()">Get All Bugs</button>
+      &nbsp;&nbsp;
+      <button class="submitButton btn btn-info" (click)="this.getBugsStatusandName()">
+        Search Bug by Name & status
+      </button>
+
     </div>
-    <!-- <button class="submitButton" (click)="this.bugs1(Bug.name, Bug.status)">
-      SEARCH BUG
-    </button> -->
     <div class="table-responsive">
       <table class="table table-bordered table-stripped" style="border: 2px solid #000000; margin-top: 50px">
         <thead class="thead-dark">
