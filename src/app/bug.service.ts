@@ -48,6 +48,15 @@ export class BugService {
   delete(id: any){
     return this.http.delete(URL + '/' +id);
   }
+
+  getBug(name:any){
+    return this.http.get(URL+'name/'+ name, {
+      headers: {
+        "content-type": 'application/json',
+        reponseType: 'text'
+      }
+      });
+  }
 }
 
 

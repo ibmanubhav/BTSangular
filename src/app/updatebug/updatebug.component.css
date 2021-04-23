@@ -15,6 +15,13 @@ input, label {
   float:left;
 }
 
+footer {
+  font-size: 20px;
+  background-color: #faf3e0;
+  padding-bottom: 20px;
+}
+
+
 h1 {
   background-color: blueviolet;
   padding: 30px;

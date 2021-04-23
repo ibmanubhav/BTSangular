@@ -25,7 +25,7 @@ input, label {
 }
 
 .button11{
-  width: 60px;
+  width: 70px;
 }
 
 button {
@@ -51,6 +51,12 @@ thead{
 .button1:hover {
   background-color: #4CAF50;
   color: white;
+}
+
+footer {
+  font-size: 20px;
+  background-color: #faf3e0;
+  padding-bottom: 20px;
 }
 
 table{

@@ -28,9 +28,8 @@
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
-              <label for="uname" class="mb-2 mr-sm-2"><b>BugName :</b><span style="color: red"> * </span></label> <br>
-              <input  value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname" placeholder="Enter Name of Bug"
-                name="bugname" [(ngModel)]='Bug.name' required>
+               <label for="uname" class="mb-2 mr-sm-2"><b>BugName :</b><span style="color: red"> * </span></label> <br>
+              <input  value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname" placeholder="Enter Name of Bug" name="bugname" [(ngModel)]='Bug.name' required>
             </div>
           </div>
         </div>
@@ -188,41 +187,11 @@
 
       <!-- Button -->
       <div><button type="submit" class="btn btn-success" (click)='update()'>Update Bug</button></div><br>
-
-      <!-- Table -->
-      <table>
-        <thead>
-          <td>Bug Name</td>
-          <td>Project ID</td>
-          <td>Module</td>
-          <td>Build Version</td>
-          <td>Synopsis</td>
-          <td>Product</td>
-          <td>Description</td>
-          <td>Submitted On</td>
-          <td>ETA</td>
-          <td>Bug Status</td>
-          <td>Bug Priority</td>
-          <td>Bug Severity</td>
-          <td>Bug Type</td>
-        </thead>
-        <tbody>
-          <tr *ngFor='let Bug1 of bugArray; index as i'>
-            <td>{{Bug1.name}}</td>
-            <td>{{Bug1.projectId}}</td>
-            <td>{{Bug1.module}}</td>
-            <td>{{Bug1.buildVersion}}</td>
-            <td>{{Bug1.synopsis}}</td>
-            <td>{{Bug1.product}}</td>
-            <td>{{Bug1.description}}</td>
-            <td>{{Bug1.submittedOn}}</td>
-            <td>{{Bug1.eta}}</td>
-            <td>{{Bug1.status}}</td>
-            <td>{{Bug1.priority}}</td>
-            <td>{{Bug1.severity}}</td>
-            <td>{{Bug1.type}}</td>
-        </tbody>
-      </table>
+    <footer class="page-footer font-small blue" id="footer">
+      <div class="footer-copyright text-center py-3">
+        <small>© 2021 Copyright Code_with_HAT/Anubhav</small>
+      </div>
+    </footer>
 
     </div>
 
