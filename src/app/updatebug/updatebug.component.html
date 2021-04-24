@@ -28,14 +28,16 @@
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
-               <label for="uname" class="mb-2 mr-sm-2"><b>BugName :</b><span style="color: red"> * </span></label> <br>
-              <input  value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname" placeholder="Enter Name of Bug" name="name" (focusout)="getBugName1(Bug.name)" [(ngModel)]='Bug.name' required>
+              <label for="uname" class="mb-2 mr-sm-2"><b>BugName :</b><span style="color: red"> * </span></label> <br>
+              <input value="something" type="text" class="form-control mb-2 mr-sm-2" id="bugname"
+                placeholder="Enter Name of Bug" name="name" (focusout)="getBugName1(Bug.name)" [(ngModel)]='Bug.name'
+                required>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>Project ID:</b><span style="color: red"> *</span></label>
+            <label for="uname" class="mb-2 mr-sm-2"><b>Project ID:</b></label>
             <input type="text" class="form-control mb-2 mr-sm-2" id="projectId" placeholder="Enter Project ID"
               name="projectId" [(ngModel)]='Bug.projectId' required>
           </div>
@@ -46,7 +48,7 @@
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
-              <label for="uname" class="mb-2 mr-sm-2"><b>Module : </b><span style="color: red"> *</span></label>
+              <label for="uname" class="mb-2 mr-sm-2"><b>Module : </b></label>
               <br />
               <input type="text" class="form-control mb-2 mr-sm-2" id="module" name="module" placeholder="Enter Module"
                 [(ngModel)]="Bug.module" required />
@@ -55,7 +57,7 @@
         </div>
         <div class="col">
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>Build Version:</b><span style="color: red"> *</span></label>
+            <label for="uname" class="mb-2 mr-sm-2"><b>Build Version:</b></label>
             <input type="text" class="form-control mb-2 mr-sm-2" id="buildVersion" name="buildversion"
               placeholder="Enter Build Version" [(ngModel)]="Bug.buildVersion" required />
           </div>
@@ -66,7 +68,7 @@
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
-              <label for="uname" class="mb-2 mr-sm-2"><b>Synopsis : </b><span style="color: red"> *</span></label>
+              <label for="uname" class="mb-2 mr-sm-2"><b>Synopsis : </b></label>
               <br />
               <textarea rows="1" placeholder="Maximum 50" maxlength="50" cols="25" type="text"
                 class="form-control mb-2 mr-sm-2" id="synopsis" name="synopsis" [(ngModel)]="Bug.synopsis"
@@ -77,7 +79,7 @@
         </div>
         <div class="col">
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>Product:</b><span style="color: red"> *</span></label>
+            <label for="uname" class="mb-2 mr-sm-2"><b>Product:</b></label>
             <input type="text" class="form-control mb-2 mr-sm-2" id="product" name="product" placeholder="Enter Product"
               [(ngModel)]="Bug.product" required />
           </div>
@@ -98,7 +100,7 @@
       </div> -->
         <div class="col">
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>ETA:</b><span style="color: red"> *</span></label>
+            <label for="uname" class="mb-2 mr-sm-2"><b>ETA:</b></label>
             <input type="date" [(ngModel)]="Bug.eta" class="form-control mb-2 mr-sm-2" id="eta" name="eta" required />
           </div>
         </div>
@@ -108,7 +110,7 @@
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
-              <label for="uname" class="mb-2 mr-sm-2"><b>Status : </b><span style="color: red"> *</span></label>
+              <label for="uname" class="mb-2 mr-sm-2"><b>Status : </b></label>
               <select class="custom-select custom-select mb-3" id="status" name="status" [(ngModel)]="Bug.status"
                 required>
                 <option value="NEW">NEW</option>
@@ -127,7 +129,7 @@
         <div class="col">
           <div class="form-group">
             <div class="form-group form-inline">
-              <label for="uname" class="mb-2 mr-sm-2"><b>Severity :</b><span style="color: red"> *</span></label>
+              <label for="uname" class="mb-2 mr-sm-2"><b>Severity :</b></label>
               <select class="custom-select custom-select mb-3" id="severity" name="severity" [(ngModel)]="Bug.severity"
                 required>
                 <option>CRITICAL</option>
@@ -143,7 +145,7 @@
         <div class="col">
 
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>Priority : </b><span style="color: red"> *</span></label>
+            <label for="uname" class="mb-2 mr-sm-2"><b>Priority : </b></label>
             <select class="custom-select custom-select mb-3" id="priority" name="priority" [(ngModel)]="Bug.priority"
               required>
               <option>HIGH</option>
@@ -154,7 +156,7 @@
         </div>
         <div class="col">
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>Bug Type :</b><span style="color: red"> *</span></label>
+            <label for="uname" class="mb-2 mr-sm-2"><b>Bug Type :</b></label>
             <select class="custom-select custom-select mb-3" id="type" name="type" [(ngModel)]="Bug.type" required>
               <option>SYNTAX</option>
               <option>COMPILE_TIME</option>
@@ -170,7 +172,7 @@
       <div class="row">
         <div class="col">
           <div class="form-group form-inline">
-            <label for="uname" class="mb-2 mr-sm-2"><b>Description :</b><span style="color: red"> *</span>
+            <label for="uname" class="mb-2 mr-sm-2"><b>Description :</b>
             </label>
             <div class="form-group">
               <textarea maxlength="200" class="form-control" rows="5" id="description" name="description"
@@ -187,11 +189,11 @@
 
       <!-- Button -->
       <div><button type="submit" class="btn btn-success" (click)='update()'>Update Bug</button></div><br>
-    <footer class="page-footer font-small blue" id="footer">
-      <div class="footer-copyright text-center py-3">
-        <small>© 2021 Copyright Code_with_HAT/Anubhav</small>
-      </div>
-    </footer>
+      <footer class="page-footer font-small blue" id="footer">
+        <div class="footer-copyright text-center py-3">
+          <small>© 2021 Copyright Code_with_HAT/Anubhav</small>
+        </div>
+      </footer>
 
     </div>
 

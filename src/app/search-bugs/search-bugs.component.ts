@@ -27,6 +27,7 @@ export class SearchBugsComponent implements OnInit {
         this.bugList = response;
         if (this.bugList!=0) {
           this.bugArray = this.bugList;
+          alert("Bug Found")
         }
         else {
           alert("No Bug with Name : " + name + " and Status : " + status + " found");
@@ -48,7 +49,7 @@ export class SearchBugsComponent implements OnInit {
     const observable = this.BugService.getBugName(this.Bug.name);
     observable.subscribe(response => {
       console.log(response);
-      this.bugArray = [response];
+      this.bugArray = response;
       if (this.bugArray[0] == undefined) {
         return alert('Oops!! No Bug in Database')
       }

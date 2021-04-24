@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { bug } from './bug'
-import{ HttpHeaders } from '@angular/common/http'
 
 const URL = 'http://localhost:8081/bug';
 
@@ -25,6 +24,15 @@ export class BugService {
   }
 
   getBugName(name: any) {
+    return this.http.get(URL + '/' + name, {
+      headers: {
+        "content-type": 'application/json',
+        responseType: 'text'
+      }
+    });
+  }
+
+  getBugName12(name: any) {
     return this.http.get(URL + '/name/' + name, {
       headers: {
         "content-type": 'application/json',
@@ -32,6 +40,7 @@ export class BugService {
       }
     });
   }
+
   getBugStatus(status: any) {
     return this.http.get(URL + '/status/' + status, {
       headers: {

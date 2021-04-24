@@ -22,7 +22,7 @@ export class UpdatebugComponent implements OnInit {
     let bugname = (<HTMLInputElement>document.getElementById('bugname')).value;
     if (bugname) {
       URL = URL + 'name/' + bugname;
-      const observable = this.BugService.getBugName(bugname);
+      const observable = this.BugService.getBugName12(bugname);
       observable.subscribe(response => {
         this.bugArray = response;
         console.log("success");
