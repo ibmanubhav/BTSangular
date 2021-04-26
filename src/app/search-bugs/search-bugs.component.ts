@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { bug } from "../bug";
 import { BugService } from "../bug.service";
-import { observable } from 'rxjs';
-import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-search-bugs',
@@ -21,13 +19,13 @@ export class SearchBugsComponent implements OnInit {
   getBugsStatusandName(){
     let name = (<HTMLInputElement>document.getElementById('name')).value;
     let status = (<HTMLInputElement>document.getElementById('status')).value;
-  const promise = this.BugService.getBugsStatusandName(name, status);
-      promise.subscribe(response => {
-      console.log(response);
+    if (this.Bug.name != undefined && this.Bug.status != undefined) {
+      const observable = this.BugService.getBugsStatusandName(name, status);
+      observable.subscribe(response => {
+        console.log(response);
         this.bugList = response;
-        if (this.bugList!=0) {
+        if (this.bugList != 0) {
           this.bugArray = this.bugList;
-          alert("Bug Found")
         }
         else {
           alert("No Bug with Name : " + name + " and Status : " + status + " found");
@@ -39,40 +37,49 @@ export class SearchBugsComponent implements OnInit {
         })
     }
 
-  // reloadPage() {
-  //   window.location.reload();
-  // }
 
-  // ==================================================
-  getBugName(name: any) {
-    console.log(this.Bug.name);
-    const observable = this.BugService.getBugName(this.Bug.name);
-    observable.subscribe(response => {
-      console.log(response);
-      this.bugArray = response;
-      if (this.bugArray[0] == undefined) {
-        return alert('Oops!! No Bug in Database')
-      }
-      else {
-        return alert('Bug Found')
-      }
-    })
+    if (this.Bug.name != undefined && this.Bug.status == undefined) {
+      const observable = this.BugService.getBugName(this.Bug.name);
+      observable.subscribe(response => {
+        console.log(response);
+        this.bugArray = response;
+        if (this.bugArray[0] == undefined) {
+          alert("No bug found")
+
+        } else {
+          alert("Displaying bugs with similar name " + name)
+        }
+      },
+        error => {
+          alert("Error Occured. Not able to search..");
+        })
+    }
+
+
+    if (this.Bug.name == undefined && this.Bug.status != undefined) {
+      const observable = this.BugService.getBugStatus(status);
+      observable.subscribe(response => {
+        console.log(response);
+        this.bugArray = response;
+        if (this.bugArray[0] == undefined) {
+          alert("No bug found")
+
+        } else {
+          alert("Displaying bugs with status " + status)
+        }
+      },
+        error => {
+          alert("Error Occured. Not able to search..");
+        })
+    }
+
+
+    if (this.Bug.name == undefined && this.Bug.status == undefined) {
+      alert("Please enter BUG NAME or STATUS")
+    }
   }
 
 
-  getBugStatus(status: any) {
-    const observable = this.BugService.getBugStatus(status);
-    observable.subscribe(response => {
-      console.log(response);
-      this.bugArray = response
-      if (this.bugArray[0] == undefined) {
-        return alert('Oops!! No Bug in Database')
-      }
-      else {
-        return alert('Bug Found')
-      }
-    })
-  }
 
   deleteBug(id: any, index: number) {
     if (confirm("Are you Sure??")) {
@@ -86,6 +93,12 @@ export class SearchBugsComponent implements OnInit {
 
   }
 
+
+
+  showDescription(description: string) {
+    // Swal.fire(description);
+     alert(description);
+  }
 
   ngOnInit(): void {
     const observable = this.BugService.getAllBugs();

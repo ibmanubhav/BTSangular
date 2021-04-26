@@ -9,6 +9,7 @@ import { SearchBugsComponent } from './search-bugs/search-bugs.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { UpdatebugComponent } from './updatebug/updatebug.component';
+import { EllipsisPipe } from './TruncateCustomPipes';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+    EllipsisPipe,
     AppComponent,
     HeaderComponent,
     CreateBugFormComponent,

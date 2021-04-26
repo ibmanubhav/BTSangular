@@ -10,21 +10,10 @@
         <div class="col">
           <div class="form-group form-inline">
             <label><b>Bug Name : </b></label>
-            <input type="text" maxlength="40" class="form-control mb-2 mr-sm-2" id="name" placeholder="Enter Name of Bug"
-                name="uname" style="width: 250px" [(ngModel)]='Bug.name' required>
-            <div class="col">
-              <button class="btn btn-info align-right" (click)="getBugName(Bug.name)">Search Name</button><br>
-            </div>
-          </div>
-        </div>
-      </div>
-
-
-
-
-      <div class="row">
-        <div class="col">
-          <div class="form-group form-inline">
+            <input type="text" maxlength="40" class="form-control mb-2 mr-sm-2" id="name"
+              placeholder="Enter Name of Bug" name="uname" style="width: 250px" [(ngModel)]='Bug.name' required>
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+            &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
             <label><b>Bug Status : </b></label>
             <select style="width: 250px" class="custom-select custom-select mb-3" id="status" [(ngModel)]="Bug.status"
               required>
@@ -39,7 +28,22 @@
               <option>CLOSED</option>
             </select>
             <div class="col">
-              <button class="btn btn-info" (click)="getBugStatus(Bug.status)">Search Status</button>
+              <div class="col">
+                <!-- <button class="btn btn-info align-right" (click)="getBugName(Bug.name)">Search Name</button><br> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="row">
+          <div class="col">
+            <div class="form-group form-inline">
+
+
+              <!-- <button class="btn btn-info" (click)="getBugStatus(Bug.status)">Search Status</button> -->
             </div>
           </div>
         </div>
@@ -49,7 +53,7 @@
       <button class="btn btn-info left" (click)="ngOnInit()">Get All Bugs</button>
       &nbsp;&nbsp;
       <button class="submitButton btn btn-info" (click)="this.getBugsStatusandName()">
-        Search Bug by Name & status
+        Search Bug
       </button>
 
     </div>
@@ -75,11 +79,10 @@
           <tr *ngFor='let Bug1 of bugArray; index as i'>
             <td>{{Bug1.name}}</td>
             <td>{{Bug1.projectId}}</td>
-
             <td>{{Bug1.buildVersion}}</td>
-
             <td>{{Bug1.product}}</td>
-            <td>{{Bug1.description}}</td>
+            <td> {{ Bug1.description | ellipsis : 10 }}
+              <a type="text" class="btn btn-link" (click)="showDescription(this.Bug1.description)">read more</a></td>
             <td>{{Bug1.submittedOn | date: 'M/d/yy'}}</td>
             <td>{{Bug1.eta | date: 'M/d/yy'}}</td>
             <td>{{Bug1.status}}</td>

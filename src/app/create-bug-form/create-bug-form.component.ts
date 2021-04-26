@@ -36,12 +36,12 @@ export class CreateBugFormComponent implements OnInit {
     observable.subscribe(response => {
       console.log(response);
       this.Bug.id = response;
-      alert("Bug is added to Database");
+      alert("Bug is added");
       this.bugArray.push(Object.assign({}, this.Bug));
     },
       error => {
         console.log(error);
-        alert("Please Enter all Mandatory fields")
+        alert("Error, check form and try again")
       })
 
   }
